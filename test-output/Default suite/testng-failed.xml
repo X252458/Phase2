@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.telus.rcms.tests.getRewardCommitment.TC04_Telus_Return_Renewal_DF_AF_TIA_TIP_Renewal_DF_Pay_BILL">
+        <methods>
+          <include name="afterTest"/>
+          <include name="BeforeMethod"/>
+          <include name="testMethod_RewardCommitment" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.telus.rcms.tests.getRewardCommitment.TC04_Telus_Return_Renewal_DF_AF_TIA_TIP_Renewal_DF_Pay_BILL -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

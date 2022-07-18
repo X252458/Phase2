@@ -1,0 +1,20 @@
+{
+	"PT168": {
+		"ENDPOINT_LSMS": "http://wlnp-pt.ent.agt.ab.ca/telus-wlnp-web/services/WLNP-PortabilityServiceSOAP",
+		"ENDPOINT_2FA": "https://enterprisemessagewebk-is02.tsl.telus.com/publisher/publish/AT01.PartyEvent.CustomerOrder.TN.Porting",
+		"ENDPOINT_PORTIN_PENDING": "https://soa-mp-kidcoss-it01.tsl.telus.com:443/RMO/ResourceMgmt/CreatePortInRequestService_v1_1_vs0",
+		"ENDPOINT_OOPS": "https://enterprisemessagewebk-is02.tsl.telus.com/publisher/publish/DV01.BusinessInteraction.Notification.InboundSMS"
+	},
+	"PT148": {
+		"ENDPOINT_LSMS": "http://wlnp-pt.ent.agt.ab.ca/telus-wlnp-web/services/WLNP-PortabilityServiceSOAP",
+		"ENDPOINT_2FA": "https://enterprisemessagewebk-is02.tsl.telus.com/publisher/publish/PT01.PartyEvent.CustomerOrder.TN.Porting",
+		"ENDPOINT_PORTIN_PENDING": "https://soa-mp-kidcoss-it02.tsl.telus.com:443/RMO/ResourceMgmt/CreatePortInRequestService_v1_1_vs0",
+		"ENDPOINT_OOPS": "https://enterprisemessagewebk-is02.tsl.telus.com/publisher/publish/DV01.BusinessInteraction.Notification.InboundSMS"
+	},
+	"PT140": {
+		"ENDPOINT_LSMS": "http://wlnp-pt.ent.agt.ab.ca/telus-wlnp-web/services/WLNP-PortabilityServiceSOAP",
+		"ENDPOINT_2FA": "https://enterprisemessagewebk-is02.tsl.telus.com/publisher/publish/PT140.PartyEvent.CustomerOrder.TN.Porting",
+		"ENDPOINT_PORTIN_PENDING": "https://soa-mp-kidcoss-it02.tsl.telus.com:443/RMO/ResourceMgmt/CreatePortInRequestService_v1_1_vs0",
+		"ENDPOINT_OOPS": "https://enterprisemessagewebk-is02.tsl.telus.com/publisher/publish/DV01.BusinessInteraction.Notification.InboundSMS"
+	}
+}
