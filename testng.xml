@@ -6,9 +6,6 @@
     <listeners>
         <listener
             class-name="com.test.reporting.AnnotationTransformer" />
-      <listener
-            class-name="com.test.listeners.ReportPortalListener" />  
-    </listeners> 
     <test name="RCMSRegressionTests">
         <groups>
             <run>
