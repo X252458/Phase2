@@ -101,8 +101,9 @@ public class TC08_Koodo_with_TAB_S_in_HPA extends BaseTest {
 		Reporting.setNewGroupName("GET REWARD SERVICE API CALL - AccessoryFinance");
 		String apiEnv = GenericUtils.getAPIEnvironment(environment);
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
-		// 8465602, 8465568, 8465520, 8466218
-		subscriptionID = "8465520";
+		// 8465602, 8465568, 8465520, 8466218 -> PT148
+		// 8386180, 8384504, 8386699  -> PT168
+		subscriptionID = "8386180";
 		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID : " + subscriptionID);
 		startDate = JSONUtils.getGMTStartDate();
 		System.setProperty("karate.auth_token_violation", violationaccessToken);
