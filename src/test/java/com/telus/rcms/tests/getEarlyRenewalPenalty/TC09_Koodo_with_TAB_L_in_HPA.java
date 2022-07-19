@@ -98,7 +98,7 @@ public class TC09_Koodo_with_TAB_L_in_HPA extends BaseTest {
 		Reporting.logReporter(Status.INFO, "ACCESS_TOKEN: " + violationaccessToken);
 		Reporting.printAndClearLogGroupStatements();
 
-		Reporting.setNewGroupName("GET REWARD SERVICE API CALL");
+		Reporting.setNewGroupName("GET REWARD SERVICE API CALL - TAB L");
 		String apiEnv = GenericUtils.getAPIEnvironment(environment);
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 		// 8463813, 8466233, 8466081

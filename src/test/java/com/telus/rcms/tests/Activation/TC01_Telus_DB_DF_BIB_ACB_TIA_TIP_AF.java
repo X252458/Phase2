@@ -178,7 +178,7 @@ public class TC01_Telus_DB_DF_BIB_ACB_TIA_TIP_AF
 	 */
 	@AfterMethod(alwaysRun = true)
 	public void afterTest1() {
-		Reporting.setNewGroupName("Close All COnnection");
+		Reporting.setNewGroupName("Close All Connection");
 		try {
 			DBUtils.dbDisConnect();
 		} catch (SQLException e) {

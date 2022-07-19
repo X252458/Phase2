@@ -99,7 +99,7 @@ public class TC09_Telus_with_DB_DF_BIB_RCB extends BaseTest {
 
 		// Activation API Call
 
-		Reporting.setNewGroupName("ACTIVATION SERVICE API CALL -Koodo sub with TAB+HWS");
+		Reporting.setNewGroupName("ACTIVATION SERVICE API CALL");
 		String apiEnv = GenericUtils.getAPIEnvironment(environment);
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 		accountID = GenericUtils.getUniqueAccountID(apiEnv);
@@ -137,7 +137,7 @@ public class TC09_Telus_with_DB_DF_BIB_RCB extends BaseTest {
 */
 		// Get Reward API Call
 
-		Reporting.setNewGroupName("GET REWARD SERVICE API CALL -Koodo sub with DF+DB+BIB+RCB");
+		Reporting.setNewGroupName("GET REWARD SERVICE API CALL");
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 
 		Map<String, Object> apiOperation3 = APIJava.runKarateFeature(environment,

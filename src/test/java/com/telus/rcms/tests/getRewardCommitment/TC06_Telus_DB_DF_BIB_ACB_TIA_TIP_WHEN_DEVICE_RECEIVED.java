@@ -141,7 +141,7 @@ public class TC06_Telus_DB_DF_BIB_ACB_TIA_TIP_WHEN_DEVICE_RECEIVED extends BaseT
 
 		// Get Reward API Call
 
-		Reporting.setNewGroupName("GET REWARD SERVICE API CALL - TIASSETCREDIT, TIPROMOCREDIT - Installment date");
+		Reporting.setNewGroupName("GET REWARD SERVICE API CALL - DB+DF+BIB+ACB+TIASSETCREDIT+TIPROMOCREDIT - Device Received");
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 
 		Map<String, Object> apiOperation3 = APIJava.runKarateFeature(environment,

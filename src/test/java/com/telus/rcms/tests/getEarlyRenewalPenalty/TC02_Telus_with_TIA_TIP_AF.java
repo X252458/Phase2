@@ -126,7 +126,7 @@ public class TC02_Telus_with_TIA_TIP_AF extends BaseTest {
 
 		// GetEarlyRenewalPenalty API Call
 
-		Reporting.setNewGroupName("GET REWARD SERVICE API CALL - AccessoryFinance");
+		Reporting.setNewGroupName("GET REWARD SERVICE API CALL - TIAssetCredit+TIPromoCredit+AccessoryFinance");
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 
 		Map<String, Object> apiOperation3 = APIJava.runKarateFeature(environment,

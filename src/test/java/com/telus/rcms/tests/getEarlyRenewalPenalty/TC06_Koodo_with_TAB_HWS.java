@@ -124,7 +124,7 @@ public class TC06_Koodo_with_TAB_HWS extends BaseTest {
 		
 		// GetEarlyRenewalPenalty API Call
 		
-				Reporting.setNewGroupName("GET REWARD SERVICE API CALL - AccessoryFinance");
+				Reporting.setNewGroupName("GET REWARD SERVICE API CALL - TAB+HWS");
 				Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 
 				Map<String, Object> apiOperation3 = APIJava.runKarateFeature(environment,

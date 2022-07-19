@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [RCMSRegressionSuite]" parallel="methods">
-  <listeners>
-    <listener class-name="com.test.reporting.AnnotationTransformer"/>
-    <listener class-name="com.test.listeners.ReportPortalListener"/>
-  </listeners>
-  <test thread-count="1" name="RCMSRegressionTests(failed)" parallel="methods">
-    <groups>
-      <run>
-        <include name="Activation"/>
-        <include name="getRewardCommitment"/>
-        <include name="getMigrationPenalty"/>
-        <include name="getTerminationPenlty"/>
-        <include name="getEarlyRenewalPenlty"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.telus.rcms.tests.getEarlyRenewalPenalty.TC05_Telus_with_no_reward_account_SIM_ONLY_AF">
-        <methods>
-          <include name="afterTest"/>
-          <include name="BeforeMethod"/>
-          <include name="testMethod_EarlyRenewalPenalty" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getEarlyRenewalPenalty.TC05_Telus_with_no_reward_account_SIM_ONLY_AF -->
       <class name="com.telus.rcms.tests.getEarlyRenewalPenalty.TC08_Koodo_with_TAB_S_in_HPA">
         <methods>
           <include name="BeforeMethod"/>
@@ -30,48 +10,6 @@
           <include name="testMethod_TestRCMCActivationFlow" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.telus.rcms.tests.getEarlyRenewalPenalty.TC08_Koodo_with_TAB_S_in_HPA -->
-      <class name="com.telus.rcms.tests.getMigrationPenalty.TC05_DB_DF_BIB_Postpaid_Renewal_DF_Pay_TRADE_IN_PENDING_Prepaid">
-        <methods>
-          <include name="afterTest"/>
-          <include name="BeforeMethod"/>
-          <include name="testMethod_Migration" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getMigrationPenalty.TC05_DB_DF_BIB_Postpaid_Renewal_DF_Pay_TRADE_IN_PENDING_Prepaid -->
-      <class name="com.telus.rcms.tests.getEarlyRenewalPenalty.TC09_Koodo_with_TAB_L_in_HPA">
-        <methods>
-          <include name="BeforeMethod"/>
-          <include name="afterTest"/>
-          <include name="testMethod_TestRCMCActivationFlow" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getEarlyRenewalPenalty.TC09_Koodo_with_TAB_L_in_HPA -->
-      <class name="com.telus.rcms.tests.getMigrationPenalty.TC04_DB_DF_BIB_Postpaid_Renewal_DF_Pay_BTP_Prepaid">
-        <methods>
-          <include name="afterTest"/>
-          <include name="BeforeMethod"/>
-          <include name="testMethod_Migration" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getMigrationPenalty.TC04_DB_DF_BIB_Postpaid_Renewal_DF_Pay_BTP_Prepaid -->
-      <class name="com.telus.rcms.tests.getMigrationPenalty.TC03_DB_DF_BIB_ACB_TIA_TIP_Postpaid_PRESOC_Prepaid">
-        <methods>
-          <include name="BeforeMethod"/>
-          <include name="testMethod_Migration" invocation-numbers="0"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getMigrationPenalty.TC03_DB_DF_BIB_ACB_TIA_TIP_Postpaid_PRESOC_Prepaid -->
-      <class name="com.telus.rcms.tests.getTerminationPenalty.TC09_Telus_DF_Renewal_DB_AF_TIA_Exchange_DF_DB_TIP">
-        <methods>
-          <include name="BeforeMethod"/>
-          <include name="afterTest"/>
-          <include name="testMethod_Termination" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getTerminationPenalty.TC09_Telus_DF_Renewal_DB_AF_TIA_Exchange_DF_DB_TIP -->
-      <class name="com.telus.rcms.tests.getMigrationPenalty.TC01_PRESOC_Prepaid_DB_DF_Postpaid">
-        <methods>
-          <include name="testMethod_Migration" invocation-numbers="0"/>
-          <include name="BeforeMethod"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getMigrationPenalty.TC01_PRESOC_Prepaid_DB_DF_Postpaid -->
     </classes>
-  </test> <!-- RCMSRegressionTests(failed) -->
-</suite> <!-- Failed suite [RCMSRegressionSuite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

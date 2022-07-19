@@ -143,7 +143,7 @@ public class TC04_Telus_Return_Renewal_DF_AF_TIA_TIP_Renewal_DF_Pay_BILL
 
 		// Return API Call
 
-		Reporting.setNewGroupName("Return SERVICE API CALL - DF");
+		Reporting.setNewGroupName("RETURN SERVICE API CALL - DF");
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 
 		Map<String, Object> apiOperation3 = APIJava.runKarateFeature(environment,
