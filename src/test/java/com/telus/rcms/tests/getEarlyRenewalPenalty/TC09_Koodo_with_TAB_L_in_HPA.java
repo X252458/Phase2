@@ -102,7 +102,7 @@ public class TC09_Koodo_with_TAB_L_in_HPA extends BaseTest {
 		String apiEnv = GenericUtils.getAPIEnvironment(environment);
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 		// 8463813, 8466233, 8466081
-		subscriptionID = "8462298";
+		subscriptionID = "8386180";
 		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID : " + subscriptionID);
 		System.setProperty("karate.subID", subscriptionID);
 		startDate = JSONUtils.getGMTStartDate();
