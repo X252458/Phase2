@@ -17,7 +17,7 @@ Feature: RCMS Activation API - TC01 Activate Telus Subscriber with DB+DF+BIB+ACB
 
   Scenario: Retrieve SPID from the LSMS
     #Set endpoint url
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreement/v1/loyaltyAgreement'
+    Given url ENDPOINT_ACTIVATION
     #Request XML passed for the operation and printing the same for verification
     And request payload
     #		When REST operation post
