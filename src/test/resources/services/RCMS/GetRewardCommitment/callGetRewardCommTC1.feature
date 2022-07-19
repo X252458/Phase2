@@ -15,6 +15,6 @@ Feature: RCMS Activation API - TC01 Call getRewardCommitment operation for Telus
 
   Scenario: Retrieve SPID from the LSMS
     #Set endpoint url
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreement/v1/loyaltyAgreement'
+    Given url ENDPOINT_REWARD_COMMITMENT
     #		When REST operation GET
     When method get

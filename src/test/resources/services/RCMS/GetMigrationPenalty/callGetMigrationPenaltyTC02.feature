@@ -14,6 +14,6 @@ Feature: RCMS Migration API - TC02 Call getMigrationPenalty for a subscriber who
 	
   Scenario: Firing GetEarlyRenewalPenalty API
 
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreementViolation/v1/slaViolation'
+    Given url ENDPOINT_MIGRATION_PENALTY
     And request payload
     When method post

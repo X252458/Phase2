@@ -14,6 +14,6 @@ Feature: TC04 Call getEarlyRenewalPenalty for Telus Subscriber with DB + DF + RC
 	
   Scenario: Firing API
 
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreementViolation/v1/slaViolation'
+    Given url ENDPOINT_EARLY_RENEWAL_PENALTY
     And request payload
     When method post

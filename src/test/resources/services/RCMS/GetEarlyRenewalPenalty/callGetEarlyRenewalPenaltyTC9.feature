@@ -14,6 +14,6 @@ Feature: TC09 Call getEarlyRenewalPenalty for  Koodo Subscriber with TAB L in HP
 	
   Scenario: Firing GetEarlyRenewalPenalty API
 
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreementViolation/v1/slaViolation'
+    Given url ENDPOINT_EARLY_RENEWAL_PENALTY
     And request payload
     When method post

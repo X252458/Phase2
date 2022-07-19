@@ -17,7 +17,7 @@ Feature: RCMS Activation API - TC03 Activate Koodo subscriber with SIM ONLY
 
   Scenario: Firing API
     #Set endpoint url
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreement/v1/loyaltyAgreement'
+    Given url ENDPOINT_ACTIVATION
     #Request XML passed for the operation and printing the same for verification
     And request payload
     #		When REST operation post

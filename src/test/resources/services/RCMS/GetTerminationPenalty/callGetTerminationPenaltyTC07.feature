@@ -13,6 +13,6 @@ Feature: RCMS Activation API - TC03 Call getTerminationPenalty for Telus Subscri
 	
   Scenario: Firing GetEarlyRenewalPenalty API
 
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreementViolation/v1/slaViolation'
+    Given url ENDPOINT_TERMINATION_PENALTY
     And request payload
     When method post

@@ -16,6 +16,6 @@ Feature: RCMS GetRewardCommitment API - TC09 Call getRewardCommitment operation 
 
   Scenario: Firing API for getRewardCommitment API
     #Set endpoint url
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreement/v1/loyaltyAgreement'
+    Given url ENDPOINT_REWARD_COMMITMENT
     #		When REST operation GET
     When method get

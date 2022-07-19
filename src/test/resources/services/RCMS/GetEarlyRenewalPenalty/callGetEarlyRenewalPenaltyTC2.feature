@@ -14,6 +14,6 @@ Feature: TC02 Call getEarlyRenewalPenalty for Telus  subscriber with TIASSETCRED
 	
   Scenario: Retrieve SPID from the LSMS
 
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreementViolation/v1/slaViolation'
+    Given url ENDPOINT_EARLY_RENEWAL_PENALTY
     And request payload
     When method post

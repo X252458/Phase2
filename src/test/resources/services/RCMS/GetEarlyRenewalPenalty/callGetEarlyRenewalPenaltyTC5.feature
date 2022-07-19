@@ -14,6 +14,6 @@ Feature: TC05 Call getEarlyRenewalPenalty for  TELUS subscriber with no reward a
 	
   Scenario: Firing GetEarlyRenewalPenalty API
 
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreementViolation/v1/slaViolation'
+    Given url ENDPOINT_EARLY_RENEWAL_PENALTY
     And request payload
     When method post

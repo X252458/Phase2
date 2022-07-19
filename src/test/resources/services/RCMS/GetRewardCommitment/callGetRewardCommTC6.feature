@@ -15,6 +15,6 @@ Feature: RCMS Activation API - TC06 Call getRewardCommitment operation for Telus
 
   Scenario: Firing API
     #Set endpoint url
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreement/v1/loyaltyAgreement'
+    Given url ENDPOINT_REWARD_COMMITMENT
     #		When REST operation GET
     When method get
