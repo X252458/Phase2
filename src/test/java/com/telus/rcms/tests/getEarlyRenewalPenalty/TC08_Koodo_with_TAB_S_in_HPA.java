@@ -103,7 +103,7 @@ public class TC08_Koodo_with_TAB_S_in_HPA extends BaseTest {
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 		// 8465602, 8465568, 8465520, 8466218 -> PT148
 		// 8386180, 8384504, 8386699  -> PT168
-		subscriptionID = "8386180";
+		subscriptionID = "8276316";
 		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID : " + subscriptionID);
 		startDate = JSONUtils.getGMTStartDate();
 		System.setProperty("karate.auth_token_violation", violationaccessToken);
