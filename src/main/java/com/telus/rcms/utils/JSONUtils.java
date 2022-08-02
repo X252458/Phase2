@@ -102,22 +102,12 @@ public class JSONUtils {
 
 	}
 	public static String getGMTStartDate() {
-	
-		/*String startDate = null;
-		LocalDateTime localNow = LocalDateTime.now();
-		ZonedDateTime zonedTimeZone = localNow.atZone(ZoneId.of("GMT"));
-		ZonedDateTime timeZoneGMT = zonedTimeZone.withZoneSameInstant(ZoneId.of("GMT"));
-		startDate=timeZoneGMT.toString();
-		startDate=startDate.split("T")[0].concat("T00:00:00+0000");
-		return startDate;*/		
+		
 		Instant instant = Instant.now();
 		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("GMT"));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZZ");
 		String startDate = zdtNewYork.format(formatter).toString();
-		startDate=startDate.concat("T00:00:00-0500");
-		return startDate;
-		
-		
+		return startDate;	
 	}
 	
 	public static String getGMTStartDate1() {
