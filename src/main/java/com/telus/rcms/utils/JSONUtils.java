@@ -104,7 +104,7 @@ public class JSONUtils {
 	public static String getGMTStartDate() {
 		
 		Instant instant = Instant.now();
-		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("GMT"));
+		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("UTC-04:00"));
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZZ");
 		String startDate = zdtNewYork.format(formatter).toString();
 		return startDate;	
