@@ -70,12 +70,12 @@ public class TC02_DB_DF_BIB_ACB_RCB_Postpaid_PRECREDIT_Prepaid extends BaseTest 
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getMigrationPenalty","TC02_DB_DF_BIB_ACB_RCB_Postpaid_PRECREDIT_Prepaid","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement_Violation","getMigrationPenalty","TC02_DB_DF_BIB_ACB_RCB_Postpaid_PRECREDIT_Prepaid","CompleteRegressionSuite" })
 
 	public void testMethod_Migration(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_MIGRATION_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_MIGRATION_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

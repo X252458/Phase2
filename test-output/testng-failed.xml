@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.telus.rcms.tests.getEarlyRenewalPenalty.TC08_Koodo_with_TAB_S_in_HPA">
+      <class name="com.telus.rcms.tests.Activation.TC01_Telus_DB_DF_BIB_ACB_TIA_TIP_AF">
         <methods>
           <include name="BeforeMethod"/>
-          <include name="afterTest"/>
-          <include name="testMethod_TestRCMCActivationFlow" invocation-numbers="0"/>
+          <include name="afterTest1"/>
+          <include name="testMethod_Activation" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.telus.rcms.tests.getEarlyRenewalPenalty.TC08_Koodo_with_TAB_S_in_HPA -->
+      </class> <!-- com.telus.rcms.tests.Activation.TC01_Telus_DB_DF_BIB_ACB_TIA_TIP_AF -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

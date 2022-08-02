@@ -70,12 +70,12 @@ public class TC04_DB_DF_BIB_Postpaid_Renewal_DF_Pay_BTP_Prepaid extends BaseTest
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getMigrationPenalty","TC04_DB_DF_BIB_Postpaid_Renewal_DF_Pay_BTP_Prepaid","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement_Violation","getMigrationPenalty","TC04_DB_DF_BIB_Postpaid_Renewal_DF_Pay_BTP_Prepaid","CompleteRegressionSuite" })
 
 	public void testMethod_Migration(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_MIGRATION_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_MIGRATION_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

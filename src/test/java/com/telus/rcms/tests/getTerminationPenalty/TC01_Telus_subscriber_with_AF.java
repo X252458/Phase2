@@ -70,12 +70,12 @@ public class TC01_Telus_subscriber_with_AF extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getTerminationPenlty","Termination_TC01_Telus_with_AF","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement_Violation","getTerminationPenlty","Termination_TC01_Telus_with_AF","CompleteRegressionSuite" })
 
 	public void testMethod_Termination(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_TERMINATION_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_TERMINATION_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

@@ -72,13 +72,13 @@ public class TC05_Telus_DB_DF_BIB_Renewal_DB_Pay_BIB_TELUS_PENDING extends BaseT
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getTerminationPenlty", "Termination_TC05_Telus_DB_DF_BIB_Renewal_DB_Pay_BIB_TELUS_PENDING",
+	@Test(groups = {"Loyalty_Agreement_Violation", "getTerminationPenlty", "Termination_TC05_Telus_DB_DF_BIB_Renewal_DB_Pay_BIB_TELUS_PENDING",
 			"CompleteRegressionSuite" })
 
 	public void testMethod_Termination(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_TERMINATION_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_TERMINATION_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

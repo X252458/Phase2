@@ -73,12 +73,12 @@ public class TC08_Telus_with_ACB extends BaseTest {
 
 	}
 
-	@Test(groups = { "Activation","TC08_Telus_with_ACB","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement","Activation","TC08_Telus_with_ACB","CompleteRegressionSuite" })
 
 	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("ACTIVATION_SERVICE");
+		parentTest.assignCategory("ACTIVATION");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

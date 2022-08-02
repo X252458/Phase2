@@ -69,12 +69,12 @@ public class TC01_Telus_with_AF_Renewal extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getRewardCommitment","TC01_Telus_with_AF_Renewal","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement", "getLoyaltyAgreement","TC01_Telus_with_AF_Renewal","CompleteRegressionSuite" })
 
 	public void testMethod_RewardCommitment(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_REWARD_COMMITMENT_SERVICE");
+		parentTest.assignCategory("GET_LOYALTY_AGREEMENT");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

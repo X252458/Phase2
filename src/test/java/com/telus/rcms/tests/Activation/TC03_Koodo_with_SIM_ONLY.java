@@ -72,12 +72,12 @@ public class TC03_Koodo_with_SIM_ONLY extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "Activation","TC03_Koodo_with_SIM_ONLY","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement", "Activation","TC03_Koodo_with_SIM_ONLY","CompleteRegressionSuite" })
 
 	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("ACTIVATION_SERVICE");
+		parentTest.assignCategory("ACTIVATION");
 		
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

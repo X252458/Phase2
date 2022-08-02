@@ -67,12 +67,12 @@ public class TC02_Koodo_with_TAB_HWS extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "Activation","TC02_Koodo_with_TAB_HWS","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement", "Activation","TC02_Koodo_with_TAB_HWS","CompleteRegressionSuite" })
 
 	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("ACTIVATION_SERVICE");
+		parentTest.assignCategory("ACTIVATION");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

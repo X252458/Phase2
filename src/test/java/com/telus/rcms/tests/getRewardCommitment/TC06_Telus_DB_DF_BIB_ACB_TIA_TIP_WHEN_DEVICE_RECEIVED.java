@@ -70,12 +70,12 @@ public class TC06_Telus_DB_DF_BIB_ACB_TIA_TIP_WHEN_DEVICE_RECEIVED extends BaseT
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getRewardCommitment","TC06_Telus_DB_DF_BIB_ACB_TIA_TIP_WHEN_DEVICE_RECEIVED","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement", "getLoyaltyAgreement","TC06_Telus_DB_DF_BIB_ACB_TIA_TIP_WHEN_DEVICE_RECEIVED","CompleteRegressionSuite" })
 
 	public void testMethod_RewardCommitment(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_REWARD_COMMITMENT_SERVICE");
+		parentTest.assignCategory("GET_LOYALTY_AGREEMENT");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

@@ -68,12 +68,12 @@ public class TC09_Telus_with_DB_DF_BIB_RCB extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getRewardCommitment","TC09_Telus_with_DB_DF_BIB_RCB","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement","getLoyaltyAgreement","TC09_Telus_with_DB_DF_BIB_RCB","CompleteRegressionSuite" })
 
 	public void testMethod_RewardCommitment(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_REWARD_COMMITMENT_SERVICE");
+		parentTest.assignCategory("GET_LOYALTY_AGREEMENT");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

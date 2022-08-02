@@ -69,12 +69,12 @@ public class TC07_Koodo_with_SIM_ONLY extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getEarlyRenewalPenlty","TC07_Koodo_with_SIM_ONLY","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC07_Koodo_with_SIM_ONLY","CompleteRegressionSuite" })
 
 	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

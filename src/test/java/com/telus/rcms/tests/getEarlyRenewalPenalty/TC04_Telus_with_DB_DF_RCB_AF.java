@@ -68,12 +68,12 @@ ExtentTest parentTest = null;
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getEarlyRenewalPenlty","TC04_Telus_with_DB_DF_RCB_AF","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC04_Telus_with_DB_DF_RCB_AF","CompleteRegressionSuite" })
 
 	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

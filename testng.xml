@@ -11,7 +11,7 @@
         <groups>
             <run>
             	<include name= "Activation" />
-                <include name= "getRewardCommitment" />
+                <include name= "getLoyaltyAgreement" />
                 <include name= "getMigrationPenalty" />
                 <include name= "getTerminationPenlty" />
                 <include name= "getEarlyRenewalPenlty" />

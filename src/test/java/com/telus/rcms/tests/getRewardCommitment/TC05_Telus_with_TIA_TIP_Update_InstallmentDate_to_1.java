@@ -68,12 +68,12 @@ public class TC05_Telus_with_TIA_TIP_Update_InstallmentDate_to_1 extends BaseTes
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getRewardCommitment","TC05_Telus_with_TIA_TIP_Update_InstallmentDate_to_1","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement","getLoyaltyAgreement","TC05_Telus_with_TIA_TIP_Update_InstallmentDate_to_1","CompleteRegressionSuite" })
 
 	public void testMethod_RewardCommitment(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_REWARD_COMMITMENT_SERVICE");
+		parentTest.assignCategory("GET_LOYALTY_AGREEMENT");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

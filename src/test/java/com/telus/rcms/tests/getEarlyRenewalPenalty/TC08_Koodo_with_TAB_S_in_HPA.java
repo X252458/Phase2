@@ -69,12 +69,12 @@ public class TC08_Koodo_with_TAB_S_in_HPA extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getEarlyRenewalPenlty","TC08_Koodo_with_TAB_S_in_HPA","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC08_Koodo_with_TAB_S_in_HPA","CompleteRegressionSuite" })
 
 	public void testMethod_TestRCMCActivationFlow(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");
 		
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

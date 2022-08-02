@@ -70,12 +70,12 @@ public class TC05_Telus_with_no_reward_account_SIM_ONLY_AF extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getEarlyRenewalPenlty","TC05_Telus_with_no_reward_account_SIM_ONLY_AF","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC05_Telus_with_no_reward_account_SIM_ONLY_AF","CompleteRegressionSuite" })
 	
 	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,

@@ -70,12 +70,12 @@ public class TC03_Telus_with_DB_DF_BIB_ACB_TIA_TIP_AF extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getEarlyRenewalPenlty","TC03_Telus_with_DB_DF_BIB_ACB_TIA_TIP_AF","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC03_Telus_with_DB_DF_BIB_ACB_TIA_TIP_AF","CompleteRegressionSuite" })
 
 	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
-		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY_SERVICE");
+		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");
 
 		Reporting.setNewGroupName("Automation Configurations / Environment Details & Data Setup");
 		Reporting.logReporter(Status.INFO,
