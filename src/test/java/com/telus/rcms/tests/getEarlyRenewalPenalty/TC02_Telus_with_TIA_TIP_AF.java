@@ -73,7 +73,7 @@ public class TC02_Telus_with_TIA_TIP_AF extends BaseTest {
 
 	@Test(groups = {"Loyalty_Agreement_Violation", "getEarlyRenewalPenlty","EarlyRenewal_TC02_Telus_with_TIA_TIP_AF","CompleteRegressionSuite" })
 
-	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
+	public void testMethod_getEarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");

@@ -70,7 +70,7 @@ public class TC06_Koodo_with_TAB_HWS extends BaseTest {
 
 	@Test(groups = {"Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC06_Koodo_with_TAB_HWS","CompleteRegressionSuite" })
 
-	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
+	public void testMethod_getEarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");

@@ -74,7 +74,7 @@ public class TC03_Koodo_with_SIM_ONLY extends BaseTest {
 
 	@Test(groups = {"Loyalty_Agreement", "Activation","TC03_Koodo_with_SIM_ONLY","CompleteRegressionSuite" })
 
-	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
+	public void testMethod_activation(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("ACTIVATION");

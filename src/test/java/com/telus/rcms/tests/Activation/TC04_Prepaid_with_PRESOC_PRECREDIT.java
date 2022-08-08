@@ -72,7 +72,7 @@ public class TC04_Prepaid_with_PRESOC_PRECREDIT extends BaseTest {
 
 	@Test(groups = {"Loyalty_Agreement", "Activation","TC04_Prepaid_with_PRESOC_PRECREDIT","CompleteRegressionSuite" })
 
-	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
+	public void testMethod_activation(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("ACTIVATION");

@@ -71,7 +71,7 @@ public class TC07_Koodo_with_SIM_ONLY extends BaseTest {
 
 	@Test(groups = { "Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC07_Koodo_with_SIM_ONLY","CompleteRegressionSuite" })
 
-	public void testMethod_EarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
+	public void testMethod_getEarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");

@@ -34,11 +34,7 @@ import com.test.reporting.ExtentTestManager;
 
 /**
  * 
- * Test case name : TC13 Call getTerminationPenalty for Koodo sub who did
- * RENEWAL FROM TAB M(offercode 7) to TAB+HWS using TRADE_IN
- *
- * 
- * 
+ * Test case name : TC14 Call getTerminationPenalty for Koodo sub having TAB S in HPA 
  * 
  */
 public class TC14_Koodo_TAB_S extends BaseTest {
@@ -76,7 +72,7 @@ public class TC14_Koodo_TAB_S extends BaseTest {
 	@Test(groups = {"Loyalty_Agreement_Violation","getTerminationPenlty", "Termination_TC10_Telus_DB_DF_BIB_Renewal_DB_Pay_BTP_Exchange_DB_BIB",
 			"CompleteRegressionSuite" })
 
-	public void testMethod_Termination(ITestContext iTestContext) throws Exception {
+	public void testMethod_getTerminationPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("GET_TERMINATION_PENALTY");
@@ -109,7 +105,8 @@ public class TC14_Koodo_TAB_S extends BaseTest {
 		String apiEnv = GenericUtils.getAPIEnvironment(environment);
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 		startDate = JSONUtils.getGMTStartDate();
-		subscriptionID = "8276316";
+		//subscriptionID = "8276316";
+		subscriptionID = DBUtils.getHpaSubid("8");
 		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID is : [" + subscriptionID + "]");
 		System.setProperty("karate.auth_token_violation", violationaccessToken);
 		System.setProperty("karate.subID", subscriptionID);
@@ -149,7 +146,7 @@ public class TC14_Koodo_TAB_S extends BaseTest {
 
 		// Declaring variable from payload
 
-		GenericUtils.responseDBCheckTerminationPenalty(jsonString, subscriptionID, 0, paymentMech);
+		GenericUtils.responseDBCheckTerminationPenalty(jsonString, subscriptionID, 1, paymentMech);
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}

@@ -71,7 +71,7 @@ public class TC08_Koodo_with_TAB_S_in_HPA extends BaseTest {
 
 	@Test(groups = {"Loyalty_Agreement_Violation","getEarlyRenewalPenlty","EarlyRenewal_TC08_Koodo_with_TAB_S_in_HPA","CompleteRegressionSuite" })
 
-	public void testMethod_TestRCMCActivationFlow(ITestContext iTestContext) throws Exception {
+	public void testMethod_getEarlyRenewalPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("GET_EARLY_RENEWAL_PENALTY");
@@ -103,8 +103,9 @@ public class TC08_Koodo_with_TAB_S_in_HPA extends BaseTest {
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 		// 8465602, 8465568, 8465520, 8466218 -> PT148
 		// 8386180, 8384504, 8386699  -> PT168
-		subscriptionID = "8276316";
-		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID : " + subscriptionID);
+		//subscriptionID = "8385182";
+		subscriptionID = DBUtils.getHpaSubid("8");
+		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID picked from CR DB: " + subscriptionID);
 		startDate = JSONUtils.getGMTStartDate();
 		System.setProperty("karate.auth_token_violation", violationaccessToken);
 		System.setProperty("karate.subID", subscriptionID);

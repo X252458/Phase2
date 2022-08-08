@@ -75,7 +75,7 @@ public class TC08_Telus_with_ACB extends BaseTest {
 
 	@Test(groups = {"Loyalty_Agreement","Activation","TC08_Telus_with_ACB","CompleteRegressionSuite" })
 
-	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
+	public void testMethod_activation(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("ACTIVATION");

@@ -77,7 +77,7 @@ public class TC01_Telus_DB_DF_BIB_ACB_TIA_TIP_AF
 
 	@Test(groups = { "Loyalty_Agreement","Activation","TC01_Telus_DB_DF_BIB_ACB_TIA_TIP_AF","CompleteRegressionSuite" })
 
-	public void testMethod_Activation(ITestContext iTestContext) throws Exception {
+	public void testMethod_activation(ITestContext iTestContext) throws Exception {
 
 		 parentTest = ExtentTestManager.getTest();
 		 parentTest.assignCategory("ACTIVATION");

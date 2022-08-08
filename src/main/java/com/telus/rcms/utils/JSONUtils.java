@@ -105,37 +105,11 @@ public class JSONUtils {
 		
 		Instant instant = Instant.now();
 		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("UTC-04:00"));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssZZ");
-		String startDate = zdtNewYork.format(formatter).toString();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String startDate = zdtNewYork.format(formatter).toString().concat("T00:00:00-0400");
 		return startDate;	
 	}
 	
-	public static String getGMTStartDate1() {
-		
-		/*String startDate = null;
-		LocalDateTime localNow = LocalDateTime.now();
-		ZonedDateTime zonedTimeZone = localNow.atZone(ZoneId.of("GMT"));
-		ZonedDateTime timeZoneGMT = zonedTimeZone.withZoneSameInstant(ZoneId.of("GMT"));
-		startDate=timeZoneGMT.toString();
-		startDate=startDate.split("T")[0].concat("T00:00:00+0000");
-		return startDate;*/		
-		Instant instant = Instant.now();
-		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("GMT"));
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String startDate = zdtNewYork.format(formatter).toString();
-		startDate=startDate.concat("-05:00");
-		return startDate;
-		
-		
-	}
-	
-	public static String getStartDateAdd1() {
-		String startDate = "\"";
-		startDate = startDate + LocalDate.now().toString().concat("T00:00:00-0500\"");
-		return startDate;
-
-	}
-
 	public static String getAgrmtEndDate(String endDate, String startDate, String duration) {
 
 		if (endDate == null || startDate.equals(endDate) || endDate.equals("null")) {

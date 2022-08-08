@@ -32,6 +32,49 @@ public class DBUtils {
 	static ResultSet Resultset = null;
 	static ResultSet Resultset2 = null;
 
+	
+	public static void crDbConnect() throws SQLException {
+
+		System.out.println("-------- DB Connect  ------");
+
+		String environment = SystemProperties.EXECUTION_ENVIRONMENT;
+
+		String connectionStringPT148 = "jdbc:oracle:thin:@//CRDBPT-SCAN.CORP.ADS:41521/CRDBPTSV1.WORLD";
+		String connectionStringPT168 = "jdbc:oracle:thin:@//CRDBPV-SCAN.CORP.ADS:41521/CRDBPVSV1.WORLD";
+		String connectionStringPT140 = "jdbc:oracle:thin:@//CRDBPS-SCAN.CORP.ADS:41521/CRDBPSSVA.WORLD";
+
+		if (environment.equals("PT148")) {
+			connectionString = connectionStringPT148;
+		} else if (environment.equals("PT168")) {
+			connectionString = connectionStringPT168;
+		} else if (environment.equals("PT140")) {
+			connectionString = connectionStringPT140;
+		}
+		try {
+			// Returns the Class object associated with the class
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException exception) {
+			System.out.println("Oracle Driver Class Not found Exception: " + exception.toString());
+		}
+
+		// Set connection timeout. Make sure you set this correctly as per your need
+		DriverManager.setLoginTimeout(5);
+		
+		
+
+		try {
+			// Attempts to establish a connection
+			Conn = DriverManager.getConnection(connectionString, "PORTAL", "PORTAL");
+			Reporting.logReporter(Status.INFO, "------------CR DB connected successfully------------");
+			System.out.println("Oracle JDBC Driver Successfully Registered! Let's make connection now");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+
+	
 	public static void dbConnect() throws SQLException {
 
 		System.out.println("-------- DB Connect  ------");
@@ -256,6 +299,42 @@ public class DBUtils {
 		return ItemTypeID;
 	}
 
+public static String getHpaSubid(String rewardTypeID) throws SQLException {
+		String subID=null;
+		callCRDBConnect();
+		Stmt = Conn.createStatement();
+		Resultset = Stmt.executeQuery(
+				"SELECT sub.subscription_id\r\n" + 
+				"FROM REWARD_TXN tx, REWARD_TXN_RSN txrs , REWARD_TXN_TYP tp,\r\n" + 
+				"   REWARD_TXN_TYP_DESC tpds, REWARD_RSN_TYP rs,\r\n" + 
+				"   REWARD_RSN_TYP_DESC rsds,\r\n" + 
+				"   subscription sub, client_account cas,\r\n" + 
+				"   CLIENT_ACCOUNT cab , reward_account ra,reward_acct_detail rad\r\n" + 
+				"WHERE tx.reward_txn_rsn_id = txrs.reward_txn_rsn_id\r\n" + 
+				"and txrs.reward_txn_typ_id = tp.reward_txn_typ_id\r\n" + 
+				"AND tp.reward_txn_typ_id = tpds.reward_txn_typ_id AND tpds.LANGUAGE_CD = 'EN'\r\n" + 
+				"and txrs.reward_rsn_typ_id = rs.reward_rsn_typ_id\r\n" + 
+				"AND rs.reward_rsn_typ_id = rsds.reward_rsn_typ_id AND rsds.LANGUAGE_CD = 'EN'\r\n" + 
+				"and ra.REWARD_ACCOUNT_ID = tx.REWARD_ACCOUNT_ID\r\n" + 
+				"and rad.REWARD_ACCOUNT_ID = ra.REWARD_ACCOUNT_ID\r\n" + 
+				"and sysdate between rad.EFF_START_TS and rad.EFF_STOP_TS\r\n" + 
+				"AND sub.client_account_id = cas.client_account_id\r\n" + 
+				"AND cab.CLIENT_ACCOUNT_ID = cas.PARENT_CLIENT_ACCOUNT_ID\r\n" + 
+				"and sub.subscription_id = ra.subscription_id\r\n" + 
+				"and tp.TYP_CD='RDMP'\r\n" + 
+				"and rs.typ_cd='ACTV'\r\n" + 
+				"and sub.current_status_cd in ('A')--,'S')\r\n" + 
+				"and tx.reward_program_typ_id="+rewardTypeID+ 
+				" and rad.reward_program_typ_id="+rewardTypeID+ 
+				" and ra.CURRENCY_BAL_AMT <> 0\r\n" + 
+				"and rownum = 1");
+		while (Resultset.next()) {
+			subID=String.valueOf(Resultset.getString("SUBSCRIPTION_ID"));
+		}
+		callDBDisconnect();
+		return subID;
+	}
+	
 	public static Boolean DBAccountIDAvailability(String accountID) throws SQLException {
 		Boolean DBAccIDAvailability = true;
 		String DBaccID = null;
@@ -367,6 +446,19 @@ public class DBUtils {
 			}
 		} catch (Exception e) {
 			dbConnect();
+
+		}
+
+	}
+	
+	public static void callCRDBConnect() throws SQLException {
+
+		try {
+			if (Conn.isClosed()) {
+				crDbConnect();
+			}
+		} catch (Exception e) {
+			crDbConnect();
 
 		}
 

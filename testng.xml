@@ -10,11 +10,7 @@
     <test name="RCMSRegressionTests">
         <groups>
             <run>
-            	<include name= "Activation" />
-                <include name= "getLoyaltyAgreement" />
-                <include name= "getMigrationPenalty" />
-                <include name= "getTerminationPenlty" />
-                <include name= "getEarlyRenewalPenlty" />
+            	<include name= "CompleteRegressionSuite" />
             </run>
         </groups>
         <packages>

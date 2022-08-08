@@ -76,7 +76,7 @@ public class TC09_Telus_DF_Renewal_DB_AF_TIA_Exchange_DF_DB_TIP extends BaseTest
 	@Test(groups = {"Loyalty_Agreement_Violation","getTerminationPenlty", "Termination_TC09_Telus_DF_Renewal_DB_AF_TIA_Exchange_DF_DB_TIP",
 			"CompleteRegressionSuite" })
 
-	public void testMethod_Termination(ITestContext iTestContext) throws Exception {
+	public void testMethod_getTerminationPenalty(ITestContext iTestContext) throws Exception {
 
 		parentTest = ExtentTestManager.getTest();
 		parentTest.assignCategory("GET_TERMINATION_PENALTY");
