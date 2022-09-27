@@ -71,7 +71,7 @@ public class TC01_Telus_DF_AF_ACB_TIA_TIP extends BaseTest {
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getMigrationPenalty","TC02_DB_DF_BIB_ACB_RCB_Postpaid_PRECREDIT_Prepaid","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Management","getLoyaltyAccount","TC02_DB_DF_BIB_ACB_RCB_Postpaid_PRECREDIT_Prepaid","CompleteRegressionSuite" })
 
 	public void testMethod_rewardAccInfo(ITestContext iTestContext) throws Exception {
 

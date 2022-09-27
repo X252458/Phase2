@@ -71,7 +71,7 @@ public class TC03_DB_DF_BIB_ACB_TIA_TIP_Postpaid_PRESOC_Prepaid extends BaseTest
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getMigrationPenalty","TC03_DB_DF_BIB_ACB_TIA_TIP_Postpaid_PRESOC_Prepaid","CompleteRegressionSuite" })
+	@Test(groups = {"Loyalty_Management", "getLoyaltyAccount","TC03_DB_DF_BIB_ACB_TIA_TIP_Postpaid_PRESOC_Prepaid","CompleteRegressionSuite" })
 
 	public void testMethod_rewardAccInfo(ITestContext iTestContext) throws Exception {
 

@@ -71,7 +71,7 @@ public class TC05_DB_DF_BIB_Postpaid_Renewal_DF_Pay_TRADE_IN_PENDING_Prepaid ext
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 	}
 
-	@Test(groups = { "getMigrationPenalty","TC05_DB_DF_BIB_Postpaid_Renewal_DF_Pay_TRADE_IN_PENDING_Prepaid","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Management","getLoyaltyAccount","TC05_DB_DF_BIB_Postpaid_Renewal_DF_Pay_TRADE_IN_PENDING_Prepaid","CompleteRegressionSuite" })
 
 	public void testMethod_rewardAccInfo(ITestContext iTestContext) throws Exception {
 
