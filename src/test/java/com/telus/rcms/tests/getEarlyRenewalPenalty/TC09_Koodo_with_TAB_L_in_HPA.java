@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -141,7 +142,7 @@ public class TC09_Koodo_with_TAB_L_in_HPA extends BaseTest {
 
 		// Declaring variable from payload
 
-		GenericUtils.responseDBCheckEarlyRenewalPenalty(jsonString, subscriptionID, 1);
+		ValidationUtils.responseDBCheckEarlyRenewalPenalty(jsonString, subscriptionID, 1);
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}

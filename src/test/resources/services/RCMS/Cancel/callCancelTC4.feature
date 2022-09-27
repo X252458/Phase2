@@ -7,7 +7,7 @@ Feature: RCMS Activation API - TC01 Call getRewardCommitment operation for Telus
     * def accID = karate.properties['karate.accID']
     * def subID = karate.properties['karate.subID']
     * def subNum = karate.properties['karate.subNum']
-    * def payload = read(PATH_API_PAYLOAD + 'Cancel/TC04_Telus_DB_DF_BIB_ACB_TIA_TIP_Renewal_DB_PF_Pay_BTP_Cancel.json')
+    * def payload = read(PATH_API_PAYLOAD + 'Cancel/TC04_Telus_DB_DF_BIB_ACB_TIA_TIP_Renewal_DB_AF_Pay_BTP_Cancel.json')
     * header Authorization = 'Bearer ' + auth_token
     * header Content-Type = 'application/json'
     * header Env = karate.properties['karate.apiEnv']

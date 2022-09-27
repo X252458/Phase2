@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -167,7 +168,7 @@ public class TC09_Telus_with_DB_DF_BIB_RCB extends BaseTest {
 
 		// Declaring variable from payload
 
-		GenericUtils.responseDBCheckAgrmtItemNew(jsonString, subscriptionID, 2);
+		ValidationUtils.responseDBCheckAgrmtItemNew(jsonString, subscriptionID, 2);
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}

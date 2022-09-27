@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -147,9 +148,9 @@ public class TC04_Prepaid_with_PRESOC_PRECREDIT extends BaseTest {
 		Reporting.logReporter(Status.INFO, "Pretty Payload: " + jsonString);
 
 		// Declaring variable from payload
-		GenericUtils.payloadValueDeclaration(jsonString);
-		GenericUtils.payloadnDBCheckAgrmtItem(jsonString, 2);
-		GenericUtils.extraDBvalidation(jsonString, "activation", 2);
+		ValidationUtils.payloadValueDeclaration(jsonString);
+		ValidationUtils.payloadnDBCheckAgrmtItem(jsonString, 2);
+		ValidationUtils.extraDBvalidation(jsonString, "activation", 2);
 	}
 
 	/**

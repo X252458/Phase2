@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -148,9 +149,9 @@ public class TC06_Telus_with_no_reward_acc_SIM_ONLY extends BaseTest {
 		Reporting.logReporter(Status.INFO, "Pretty Payload: " + jsonString);
 
 		// Declaring variable from payload
-		GenericUtils.payloadValueDeclaration(jsonString);
-		GenericUtils.payloadnDBCheckAgrmtItem(jsonString, 4);
-		GenericUtils.extraDBvalidation(jsonString, "activation", 4);
+		ValidationUtils.payloadValueDeclaration(jsonString);
+		ValidationUtils.payloadnDBCheckAgrmtItem(jsonString, 4);
+		ValidationUtils.extraDBvalidation(jsonString, "activation", 4);
 
 	}
 

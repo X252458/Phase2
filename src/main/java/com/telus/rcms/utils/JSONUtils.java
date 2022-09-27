@@ -88,7 +88,7 @@ public class JSONUtils {
 				if (varName.equals("null"))
 					varName = "0";
 			}
-			
+
 		} catch (NullPointerException e) {
 			varName = null;
 		}
@@ -97,19 +97,38 @@ public class JSONUtils {
 
 	public static String getStartDate() {
 		String startDate = null;
-		startDate = LocalDate.now().toString().concat("T00:00:00-0500");		
+		startDate = LocalDate.now().toString().concat("T00:00:00-0500");
 		return startDate;
 
 	}
+
 	public static String getGMTStartDate() {
-		
+
 		Instant instant = Instant.now();
-		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("UTC-04:00"));
+		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("GMT"));
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-		String startDate = zdtNewYork.format(formatter).toString().concat("T00:00:00-0400");
-		return startDate;	
+		String startDate = zdtNewYork.format(formatter).toString();
+		startDate = startDate.concat("T00:00:00-0500");
+		return startDate;
 	}
-	
+
+	public static String getGMTFutureStartDate() {
+
+		Instant instant = Instant.now();
+		ZonedDateTime zdtNewYork = instant.atZone(ZoneId.of("GMT"));
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String startDate = zdtNewYork.format(formatter).toString();
+
+		LocalDate endDateFormatted;
+		endDateFormatted = LocalDate.parse(startDate);
+		endDateFormatted = endDateFormatted.plusMonths(1);
+		String futureEndDate = endDateFormatted.toString();
+		futureEndDate = futureEndDate.concat("T00:00:00-0500");
+
+		return futureEndDate;
+
+	}
+
 	public static String getAgrmtEndDate(String endDate, String startDate, String duration) {
 
 		if (endDate == null || startDate.equals(endDate) || endDate.equals("null")) {
@@ -120,7 +139,6 @@ public class JSONUtils {
 			endDate = endDateFormatted.toString();
 
 		}
-		
 
 		return endDate;
 	}
@@ -149,7 +167,30 @@ public class JSONUtils {
 		case "BIB":
 		case "9":
 			startDateFormatted = LocalDate.parse(startDate);
-			startDateFormatted = startDateFormatted.plusMonths(monthDuration + 1).minusDays(1);
+//          startDateFormatted = startDateFormatted.plusMonths(monthDuration + 1).minusDays(1);
+			startDateFormatted = startDateFormatted.plusMonths(monthDuration + 1);
+			startDate = startDateFormatted.toString();
+			break;
+		case "TIASSETCREDIT":
+			startDateFormatted = LocalDate.parse(startDate);
+			startDateFormatted = startDateFormatted.plusDays(180);
+			startDate = startDateFormatted.toString();
+			break;
+		}
+		return startDate;
+
+	}
+
+	public static String getInstallmentFutureStartDate(String startDate, String ItemType, String duration) {
+
+		LocalDate startDateFormatted;
+		int monthDuration = Integer.parseInt(duration);
+
+		switch (ItemType) {
+		case "BIB":
+		case "9":
+			startDateFormatted = LocalDate.parse(startDate);
+            startDateFormatted = startDateFormatted.plusMonths(monthDuration + 1).minusDays(1);
 //			startDateFormatted = startDateFormatted.plusMonths(monthDuration + 1);
 			startDate = startDateFormatted.toString();
 			break;
@@ -163,6 +204,8 @@ public class JSONUtils {
 
 	}
 
+
+	
 	public static String getEndDate(String endDate, String startDate, String ItemType, String duration) {
 
 		try {
@@ -208,8 +251,6 @@ public class JSONUtils {
 		}
 		return String.valueOf(endDate);
 	}
-	
-
 
 	public static void main(String[] args) {
 

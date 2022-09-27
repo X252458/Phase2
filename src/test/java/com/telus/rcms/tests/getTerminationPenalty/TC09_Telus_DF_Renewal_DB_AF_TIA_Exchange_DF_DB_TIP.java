@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -189,7 +190,7 @@ public class TC09_Telus_DF_Renewal_DB_AF_TIA_Exchange_DF_DB_TIP extends BaseTest
 
 		// Declaring variable from payload
 
-		GenericUtils.responseDBCheckTerminationPenalty(jsonString, subscriptionID, 2,paymentMech);
+		ValidationUtils.responseDBCheckTerminationPenalty(jsonString, subscriptionID, 2,paymentMech);
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}

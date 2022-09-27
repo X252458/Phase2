@@ -243,6 +243,8 @@ public class DBUtils {
 		}
 		return ItemTypeID;
 	}
+	
+	
 	public static String getItemType(String ItemType) throws SQLException {
 
 		String ItemTypeID = null;
@@ -297,6 +299,25 @@ public class DBUtils {
 			
 		}
 		return ItemTypeID;
+	}
+	
+public static String getReasonCD(String charReasonCdName) {
+	String reasonCd = null;
+
+	switch (charReasonCdName) {
+	case "ACTIVATION_BALANCE":
+		reasonCd = "1";
+		break;
+		
+	case "RENEWAL_BALANCE":
+		reasonCd = "101";
+		break;
+		
+	case "BILL":
+		reasonCd = "217";
+		break;
+	}
+		return reasonCd;
 	}
 
 public static String getHpaSubid(String rewardTypeID) throws SQLException {

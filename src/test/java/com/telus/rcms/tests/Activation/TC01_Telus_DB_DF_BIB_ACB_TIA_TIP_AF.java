@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -154,9 +155,9 @@ public class TC01_Telus_DB_DF_BIB_ACB_TIA_TIP_AF
 		Reporting.logReporter(Status.INFO, "Pretty Payload: " + jsonString);
 
 		// Declaring variable from payload
-		GenericUtils.payloadValueDeclaration(jsonString);
-		GenericUtils.payloadnDBCheckAgrmtItem(jsonString, 7);
-		GenericUtils.extraDBvalidation(jsonString,"activation", 7);
+		ValidationUtils.payloadValueDeclaration(jsonString);
+		ValidationUtils.payloadnDBCheckAgrmtItem(jsonString, 7);
+		ValidationUtils.extraDBvalidation(jsonString,"activation", 7);
 
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");

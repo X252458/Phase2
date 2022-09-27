@@ -11,34 +11,14 @@
       </run>
     </groups>
     <classes>
-      <class name="com.telus.rcms.tests.getMigrationPenalty.TC05_Postpaid_DB_DF_BIB_Renewal_DF_Pay_TIP_to_Prepaid">
+      <class name="com.telus.rcms.tests.Activation.TC04_Prepaid_with_PRESOC_PRECREDIT">
         <methods>
-          <include name="BeforeMethod"/>
+          <include name="testMethod_activation" invocation-numbers="0"/>
           <include name="afterTest"/>
-          <include name="testMethod_getMigrationPenalty" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getMigrationPenalty.TC05_Postpaid_DB_DF_BIB_Renewal_DF_Pay_TIP_to_Prepaid -->
-      <class name="com.telus.rcms.tests.getMigrationPenalty.TC04_Postpaid_DB_DF_BIB_Renewal_DF_Pay_BTP_to_Prepaid">
-        <methods>
-          <include name="testMethod_getMigrationPenalty" invocation-numbers="0"/>
-          <include name="afterTest"/>
+          <include name="afterTest1"/>
           <include name="BeforeMethod"/>
         </methods>
-      </class> <!-- com.telus.rcms.tests.getMigrationPenalty.TC04_Postpaid_DB_DF_BIB_Renewal_DF_Pay_BTP_to_Prepaid -->
-      <class name="com.telus.rcms.tests.getEarlyRenewalPenalty.TC01_Telus_with_AF">
-        <methods>
-          <include name="testMethod_getEarlyRenewalPenalty" invocation-numbers="0"/>
-          <include name="BeforeMethod"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getEarlyRenewalPenalty.TC01_Telus_with_AF -->
-      <class name="com.telus.rcms.tests.getEarlyRenewalPenalty.TC08_Koodo_with_TAB_S_in_HPA">
-        <methods>
-          <include name="testMethod_getEarlyRenewalPenalty" invocation-numbers="0"/>
-          <include name="BeforeMethod"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.telus.rcms.tests.getEarlyRenewalPenalty.TC08_Koodo_with_TAB_S_in_HPA -->
+      </class> <!-- com.telus.rcms.tests.Activation.TC04_Prepaid_with_PRESOC_PRECREDIT -->
     </classes>
   </test> <!-- RCMSRegressionTests(failed) -->
 </suite> <!-- Failed suite [RCMSRegressionSuite] -->

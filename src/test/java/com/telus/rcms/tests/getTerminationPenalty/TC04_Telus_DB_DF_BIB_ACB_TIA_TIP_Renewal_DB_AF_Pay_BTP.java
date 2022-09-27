@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -172,7 +173,7 @@ ExtentTest parentTest = null;
 
 		// Declaring variable from payload
 
-		GenericUtils.responseDBCheckTerminationPenalty(jsonString, subscriptionID, 3, paymentMech);
+		ValidationUtils.responseDBCheckTerminationPenalty(jsonString, subscriptionID, 3, paymentMech);
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}

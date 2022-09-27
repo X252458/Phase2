@@ -23,6 +23,7 @@ import com.telus.rcms.utils.APIUtils;
 import com.telus.rcms.utils.DBUtils;
 import com.telus.rcms.utils.GenericUtils;
 import com.telus.rcms.utils.JSONUtils;
+import com.telus.rcms.utils.ValidationUtils;
 import com.test.reporting.Reporting;
 import com.test.ui.actions.BaseTest;
 import com.test.ui.actions.Validate;
@@ -174,7 +175,7 @@ public class TC02_Postpaid_DB_DF_BIB_ACB_RCB_to_Prepaid_PRECREDIT extends BaseTe
 
 		// Declaring variable from payload
 
-		GenericUtils.responseDBCheckMigrationPenalty(jsonString, subscriptionID, 7,paymentMech);
+		ValidationUtils.responseDBCheckMigrationPenalty(jsonString, subscriptionID, 7,paymentMech);
 
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}

@@ -8,7 +8,7 @@ Feature: RCMS Activation API - TC01 Return API fro renewed DF, AF, TIASSETCREDIT
     * def subID = karate.properties['karate.subID']
     * def subNum = karate.properties['karate.subNum']
     * def startDate = karate.properties['karate.startDate']
-    * def payload = read(PATH_API_PAYLOAD + 'Return/TC01_Telus_Renewal_DF_AF_TIA_TIP_Return.json')
+    * def payload = read(PATH_API_PAYLOAD + 'Return/TC01_Telus_AF_Return.json')
     * header Authorization = 'Bearer ' + auth_token
     * header Content-Type = 'application/json'
     * header Env = karate.properties['karate.apiEnv']
@@ -17,7 +17,7 @@ Feature: RCMS Activation API - TC01 Return API fro renewed DF, AF, TIASSETCREDIT
 
   Scenario: Firing API
     #Set endpoint url
-    Given url 'https://apigw-st.tsl.telus.com/customer/loyaltyAgreement/v1/loyaltyAgreement/70909986'
+    Given url ENDPOINT_RETURN
     #Request XML passed for the operation and printing the same for verification
     And request payload
     #		When REST operation post
