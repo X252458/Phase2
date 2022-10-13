@@ -87,9 +87,9 @@ public class GenericUtils {
 	 */
 	public static String getUniqueAccountID(String env) throws SQLException {
 
-		String accountIDPrefix02 = "7091";
-		String accountIDPrefix03 = "7091";
-		String accountIDPrefix04 = "7091";
+		String accountIDPrefix02 = "7192";
+		String accountIDPrefix03 = "7192";
+		String accountIDPrefix04 = "7192";
 
 		String accountID = null;
 		Random rad = new Random();
@@ -112,9 +112,9 @@ public class GenericUtils {
 
 	public static String getUniqueSubscriptionID(String env) throws SQLException {
 
-		String subscriptionIDPrefix02 = "850";
-		String subscriptionIDPrefix03 = "850";
-		String subscriptionIDPrefix04 = "850";
+		String subscriptionIDPrefix02 = "861";
+		String subscriptionIDPrefix03 = "861";
+		String subscriptionIDPrefix04 = "861";
 
 		String subscriptionID = null;
 		Random rad = new Random();
@@ -139,9 +139,9 @@ public class GenericUtils {
 
 	public static String getUniqueSubscriberNumber(String env) throws SQLException {
 
-		String subscriptionNumPrefix02 = "4162";
-		String subscriptionNumPrefix03 = "4162";
-		String subscriptionNumPrefix04 = "4162";
+		String subscriptionNumPrefix02 = "4273";
+		String subscriptionNumPrefix03 = "4273";
+		String subscriptionNumPrefix04 = "4273";
 
 		String subscriptionNum = null;
 		Random rad = new Random();
