@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.telus.rcms.tests.Cancellation.TC06_Koodo_TAB_HWS_Cancel">
+      <class name="com.telus.rcms.tests.Cancellation.TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP_Cancel">
         <methods>
-          <include name="BeforeMethod"/>
           <include name="afterTest"/>
           <include name="testMethod_cancellation" invocation-numbers="0"/>
+          <include name="BeforeMethod"/>
         </methods>
-      </class> <!-- com.telus.rcms.tests.Cancellation.TC06_Koodo_TAB_HWS_Cancel -->
+      </class> <!-- com.telus.rcms.tests.Cancellation.TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP_Cancel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

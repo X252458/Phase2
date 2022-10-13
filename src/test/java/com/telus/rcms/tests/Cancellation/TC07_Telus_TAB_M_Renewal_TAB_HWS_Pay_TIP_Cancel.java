@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.json.JSONObject;
@@ -41,7 +42,7 @@ import com.test.reporting.ExtentTestManager;
  *
  * 
  */
-public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
+public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP_Cancel extends BaseTest {
 
 	String testCaseName = null;
 	String scriptName = null;
@@ -52,6 +53,7 @@ public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
 	String environment = null;
 	static String connectionString = null;
 
+	HashMap<String, String> hpaDetails = new HashMap<String, String>();
 	String accountID = null;
 	String subscriptionID = null;
 	String subscriberNum = null;
@@ -71,10 +73,11 @@ public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
 		testCaseDescription = "The purpose of this test case is to verify \"" + scriptName + "\" workflow";
 		environment = SystemProperties.EXECUTION_ENVIRONMENT;
 
-		requestPayloadFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testSpecs\\RCMS\\Cancel\\TC05_Telus_DB_DF_BIB_Renewal_DB_Pay_TIP_Cancel.json";
+		requestPayloadFilePath = System.getProperty("user.dir")
+				+ "\\src\\test\\resources\\testSpecs\\RCMS\\Cancel\\"+scriptName+".json";
 	}
 
-	@Test(groups = { "Loyalty_Agreement","Cancellation", "TC05_Telus_DB_DF_BIB_Renewal_DB_Pay_TIP_Cancel",
+	@Test(groups = { "Loyalty_Agreement", "Cancellation", "TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP",
 			"CompleteRegressionSuite" })
 
 	public void testMethod_cancellation(ITestContext iTestContext) throws Exception {
@@ -98,11 +101,8 @@ public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
 		 * API Call Steps
 		 */
 
-		/*** Test Case - Activation - AccessoryFinance ***/
-
 		Reporting.setNewGroupName("ACCESS TOKEN GENERATION");
 		String accessToken = APIUtils.getAccessToken(environment, "rewardService");
-		Reporting.logReporter(Status.INFO, "ACCESS_TOKEN: " + accessToken);
 		String rewardServiceaccessToken = APIUtils.getAccessToken(environment, "rewardService");
 		String violationaccessToken = APIUtils.getAccessToken(environment, "violation");
 		Reporting.logReporter(Status.INFO, "ACCESS_TOKEN FOR REWARD SERVICE: " + rewardServiceaccessToken);
@@ -114,10 +114,15 @@ public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
 		Reporting.setNewGroupName("ACTIVATION SERVICE API CALL");
 		String apiEnv = GenericUtils.getAPIEnvironment(environment);
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
-		accountID = GenericUtils.getUniqueAccountID(apiEnv);
-		subscriptionID = GenericUtils.getUniqueSubscriptionID(apiEnv);
-		subscriberNum = GenericUtils.getUniqueSubscriberNumber(apiEnv);
+		hpaDetails = DBUtils.getHpaAllDetails("7");
+		accountID = hpaDetails.get("BAN");
+		subscriptionID = hpaDetails.get("SUBSCRIPTION_ID");
+		subscriberNum = hpaDetails.get("CELL_PHONE_NO");
+		Reporting.logReporter(Status.INFO, "Exisiting Subscription ID picked from CR DB: " + subscriptionID);
+		Reporting.logReporter(Status.INFO, "Exisiting Account ID picked from CR DB: " + accountID);
+		Reporting.logReporter(Status.INFO, "Exisiting Subscription Number picked from CR DB: " + subscriberNum);
 		startDate = JSONUtils.getGMTStartDate();
+		
 		System.setProperty("karate.auth_token", rewardServiceaccessToken);
 		System.setProperty("karate.auth_token_reward", rewardServiceaccessToken);
 		System.setProperty("karate.auth_token_violation", violationaccessToken);
@@ -127,44 +132,31 @@ public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
 		System.setProperty("karate.startDate", startDate);
 		System.setProperty("karate.apiEnv", apiEnv);
 
-		Map<String, Object> apiOperation1 = APIJava.runKarateFeature(environment,
-				"classpath:tests/RCMS/Activation/Others/activationTC6.feature");
-		Reporting.logReporter(Status.INFO,
-				"API Operation status: " + apiOperation1.get("tc06ActivateTelusSubwithDF_DB_BIBStatus"));
-		Reporting.logReporter(Status.INFO,
-				"API Operation Request: " + apiOperation1.get("tc06ActivateTelusSubwithDF_DB_BIBRequest"));
-
-		jsonString_activation = String.valueOf(apiOperation1.get("tc06ActivateTelusSubwithDF_DB_BIBRequest"))
-				.replace("=", ":");
-
 		Reporting.printAndClearLogGroupStatements();
-
+		
 		// Renewal API Call
 
-		Reporting.setNewGroupName("RENEWAL SERVICE API CALL - DB");
+		Reporting.setNewGroupName("RENEWAL SERVICE API CALL");
 		Reporting.logReporter(Status.INFO, "API Test Env is : [" + apiEnv + "]");
 
-		Map<String, Object> apiOperation2 = APIJava.runKarateFeature(environment,
-				"classpath:tests/RCMS/Renewal/notifySubscriptionRenewalTC05.feature");
-		Reporting.logReporter(Status.INFO, "API Operation status: " + apiOperation2.get("tc05RenewalStatus"));
-		Reporting.logReporter(Status.INFO, "API Operation Request: " + apiOperation2.get("tc05RenewalRequest"));
+		Map<String, Object> apiOperation1 = APIJava.runKarateFeature(environment,
+				"classpath:tests/RCMS/Renewal/notifySubscriptionRenewalTC13.feature");
+		Reporting.logReporter(Status.INFO, "API Operation status: " + apiOperation1.get("tc13RenewalStatus"));
+		Reporting.logReporter(Status.INFO, "API Operation Request: " + apiOperation1.get("tc13RenewalRequest"));
 
 		Reporting.printAndClearLogGroupStatements();
-		
-	//Cancel API call
-		
+
+		// Cancel API call
+
 		Reporting.setNewGroupName("CANCELLATION SERVICE API CALL");
 		Map<String, Object> apiOperation3 = APIJava.runKarateFeature(environment,
-				"classpath:tests/RCMS/Cancel/cancelTC5.feature");
-		Reporting.logReporter(Status.INFO,
-				"API Operation status: " + apiOperation3.get("apiDetailsStatus"));
-		Reporting.logReporter(Status.INFO,
-				"API Operation Request: " + apiOperation3.get("apiDetailsRequest"));
+				"classpath:tests/RCMS/Cancel/cancelTC7.feature");
+		Reporting.logReporter(Status.INFO, "API Operation status: " + apiOperation3.get("apiDetailsStatus"));
+		Reporting.logReporter(Status.INFO, "API Operation Request: " + apiOperation3.get("apiDetailsRequest"));
 		Reporting.printAndClearLogGroupStatements();
-		
 
 		/*** DB VALIDATION ***/
-		Reporting.setNewGroupName("DB VERIFICATION -  TC05");
+		Reporting.setNewGroupName("DB VERIFICATION -  TC07");
 		payloadAndDbCheck();
 		Reporting.printAndClearLogGroupStatements();
 
@@ -181,12 +173,12 @@ public class TC07_Telus_TAB_M_Renewal_TAB_HWS_Pay_TIP extends BaseTest {
 		String jsonString = GenericUtils.readFileAsString(requestPayloadFilePath);
 		jsonString = jsonString.replace("#(subID)", subscriptionID).replace("#(subNum)", subscriberNum)
 				.replace("#(accID)", accountID).replace("#(startDate)", startDate);
-		
+
 		Reporting.logReporter(Status.INFO, "Pretty Payload: " + jsonString);
-		
-		ValidationUtils.payloadnDBCheckCancel(jsonString,subscriptionID);
-		ValidationUtils.cancelDbCheck(jsonString,subscriptionID);
-		
+
+		ValidationUtils.payloadnDBCheckCancel(jsonString, subscriptionID);
+		ValidationUtils.cancelDbCheck(jsonString, subscriptionID);
+
 		Reporting.logReporter(Status.INFO, "--------------------DB Validation Completed--------------------");
 	}
 

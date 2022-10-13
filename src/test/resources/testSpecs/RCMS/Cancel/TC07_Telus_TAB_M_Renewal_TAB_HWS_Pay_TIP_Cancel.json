@@ -113,21 +113,21 @@
 			"role": "Originator",
 			"characteristic": [
 				{
-					"name": "TRANSACTION_ID",
-					"value": "1343241121"
-				},
-				{
-					"name": "CHNL_ORG_ID",
-					"value": "1100035318"
-				},
-				{
-					"name": "SALES_REP_ID",
-					"value": "2BMZ"
-				},
-				{
-					"name": "TEAM_MEMBER_ID",
-					"value": "156715"
-				}
+						"name": "TRANSACTION_ID",
+						"value": "1567864851"
+					},
+					{
+						"name": "CHNL_ORG_ID",
+						"value": "10149534"
+					},
+					{
+						"name": "SALES_REP_ID",
+						"value": "10116842"
+					},
+					{
+						"name": "TEAM_MEMBER_ID",
+						"value": "156715"
+					}
 			]
 		},
 		{

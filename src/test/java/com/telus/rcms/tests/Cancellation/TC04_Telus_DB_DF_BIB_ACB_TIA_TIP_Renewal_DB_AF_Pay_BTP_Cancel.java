@@ -74,7 +74,7 @@ public class TC04_Telus_DB_DF_BIB_ACB_TIA_TIP_Renewal_DB_AF_Pay_BTP_Cancel exten
 		requestPayloadFilePath = System.getProperty("user.dir") + "\\src\\test\\resources\\testSpecs\\RCMS\\Cancel\\"+scriptName+".json";
 	}
 
-	@Test(groups = { "Loyalty_Agreement","Cancellations", "TC04_Telus_DB_DF_BIB_ACB_TIA_TIP_Renewal_DB_AF_Pay_BTP_Cancel",
+	@Test(groups = { "Loyalty_Agreement","Cancellation", "TC04_Telus_DB_DF_BIB_ACB_TIA_TIP_Renewal_DB_AF_Pay_BTP_Cancel",
 			"CompleteRegressionSuite" })
 
 	public void testMethod_cancellation(ITestContext iTestContext) throws Exception {

@@ -70,7 +70,7 @@ public class TC02_Telus_TIA_TIP_AF_Cancel extends BaseTest {
 
 	}
 
-	@Test(groups = { "Loyalty_Agreement","Cancellations","TC02_Telus_TIA_TIP_AF_Cancel","CompleteRegressionSuite" })
+	@Test(groups = { "Loyalty_Agreement","Cancellation","TC02_Telus_TIA_TIP_AF_Cancel","CompleteRegressionSuite" })
 
 	public void testMethod_cancellation(ITestContext iTestContext) throws Exception {
 

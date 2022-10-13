@@ -355,6 +355,45 @@ public static String getHpaSubid(String rewardTypeID) throws SQLException {
 		callDBDisconnect();
 		return subID;
 	}
+
+public static HashMap getHpaAllDetails(String rewardTypeID) throws SQLException {
+	HashMap<String, String> hpaDetails = new HashMap<String, String>();
+	callCRDBConnect();
+	Stmt = Conn.createStatement();
+	Resultset = Stmt.executeQuery(
+			"SELECT cab.ban,sub.CELL_PHONE_NO,sub.subscription_id,ra.CURRENCY_BAL_AMT FROM REWARD_TXN tx, REWARD_TXN_RSN txrs , REWARD_TXN_TYP tp,\r\n"
+					+ "   REWARD_TXN_TYP_DESC tpds, REWARD_RSN_TYP rs,\r\n" + "   REWARD_RSN_TYP_DESC rsds,\r\n"
+					+ "   subscription sub, client_account cas,\r\n"
+					+ "   CLIENT_ACCOUNT cab , reward_account ra,reward_acct_detail rad\r\n"
+					+ "WHERE tx.reward_txn_rsn_id = txrs.reward_txn_rsn_id\r\n"
+					+ "and txrs.reward_txn_typ_id = tp.reward_txn_typ_id\r\n"
+					+ "AND tp.reward_txn_typ_id = tpds.reward_txn_typ_id AND tpds.LANGUAGE_CD = 'EN'\r\n"
+					+ "and txrs.reward_rsn_typ_id = rs.reward_rsn_typ_id\r\n"
+					+ "AND rs.reward_rsn_typ_id = rsds.reward_rsn_typ_id AND rsds.LANGUAGE_CD = 'EN'\r\n"
+					+ "and ra.REWARD_ACCOUNT_ID = tx.REWARD_ACCOUNT_ID\r\n"
+					+ "and rad.REWARD_ACCOUNT_ID = ra.REWARD_ACCOUNT_ID\r\n"
+					+ "and sysdate between rad.EFF_START_TS and rad.EFF_STOP_TS\r\n"
+					+ "AND sub.client_account_id = cas.client_account_id\r\n"
+					+ "AND cab.CLIENT_ACCOUNT_ID = cas.PARENT_CLIENT_ACCOUNT_ID\r\n"
+					+ "and sub.subscription_id = ra.subscription_id\r\n" + "and tp.TYP_CD='RDMP'\r\n"
+					+ "and rs.typ_cd='ACTV'\r\n" + "and sub.current_status_cd in ('A')--,'S')\r\n"
+					+ "and tx.reward_program_typ_id=" + rewardTypeID + " and rad.reward_program_typ_id="
+					+ rewardTypeID + " and ra.CURRENCY_BAL_AMT='-300'\r\n" + "and rownum = 1");
+	while (Resultset.next()) {
+		hpaDetails.put("SUBSCRIPTION_ID", String.valueOf(Resultset.getString("SUBSCRIPTION_ID")));
+		hpaDetails.put("CELL_PHONE_NO", String.valueOf(Resultset.getString("CELL_PHONE_NO")));
+		hpaDetails.put("BAN", String.valueOf(Resultset.getString("BAN")));
+		String amount = String.valueOf(Resultset.getString("CURRENCY_BAL_AMT"));
+		if(amount.contains(".")) 
+			amount = amount.split("\\.")[0];
+		if(amount.contains("-"))
+			amount = amount.split("\\-")[1];
+		hpaDetails.put("CURRENCY_BAL_AMT", amount);
+		
+	}
+	callDBDisconnect();
+	return hpaDetails;
+}
 	
 	public static Boolean DBAccountIDAvailability(String accountID) throws SQLException {
 		Boolean DBAccIDAvailability = true;
@@ -491,5 +530,6 @@ public static String getHpaSubid(String rewardTypeID) throws SQLException {
 			Conn.close();
 		}
 	}
+
 
 }
